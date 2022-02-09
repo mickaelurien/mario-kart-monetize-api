@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Kart 8 Deluxe API</title>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/png">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+
+<body id="index">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="./img/icon.png" height="40" alt="logo">
+            </a>
+        </div>
+        <ul>
+            <li><a target="blank" href="https://glaze-stetson-ab0.notion.site/MK8-Deluxe-API-Documentation-9f936a9758e04bcdb4e8616ed01c445b">DOCS</a></li>
+            <li><a href="/cgu">POLICIES</a></li>
+        </ul>
+        <div class="end">
+            <p id="subscribeNavbar">SIGN UP</p>
+        </div>
+    </nav>
+    <main>
+        <div class="banner">
+            <h1>Mario kart 8 deluxe - api</h1>
+            <h3>Drivers, karts, gliders & more</h3>
+            <div id="subscribeBtn" class="btn">Subscribe now</div>
+        </div>
+
+        <div class="content">
+            <h2>About Mario Kart 8 Deluxe API</h2>
+            <div class="items-container">
+                <div class="item">
+                    <img src="./img/transfer.svg" alt="api calls logo">
+                    <h3>Fast API Responses</h3>
+                    <p>Very fast responses so you & your customers don't wait.</p>
+                </div>
+                <div class="item">
+                    <img src="./img/docs.svg" alt="documentation logo">
+                    <h3>Interactive Documentation</h3>
+                    <p>Learn about how to reach each endpoint, constantly updated to offer you the best experience.</p>
+                </div>
+                <div class="item">
+                    <img src="./img/reception-bell.svg" alt="client logo">
+                    <h3>Customer Service</h3>
+                    <p>At your service 24 hours a day, every day</p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+        <div>
+            <p>&copy; Mickaël Urien - <a href="https://mickaelurien.fr" target="blank">mickaelurien.fr</a></p>
+        </div>
+        <div>
+            <a target="blank" href="https://glaze-stetson-ab0.notion.site/MK8-Deluxe-API-Documentation-9f936a9758e04bcdb4e8616ed01c445b">DOCS</a>
+            <a href="/cgu">POLICIES</a>
+        </div>
+    </footer>
+    <script>
+        const subscribeBtn = document.getElementById('subscribeBtn');
+        const subscribeNavbarBtn = document.getElementById('subscribeNavbar');
+        async function gotoCheckout(){
+            const rawResponse = await fetch('/checkout', {
+                method: 'POST',
+                body: ''
+            })
+            let content = await rawResponse.json()
+            window.location.href = content.url
+        }
+        subscribeBtn.addEventListener('click', async (e) => {
+            gotoCheckout();
+        })
+        subscribeNavbarBtn.addEventListener('click', async (e) => {
+            gotoCheckout();
+        })
+    </script>
+</body>
+
+</html>

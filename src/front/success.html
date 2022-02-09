@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <title>Welcome</title>
+</head>
+<body id="success">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="./img/icon.png" height="40" alt="logo">
+            </a>
+        </div>
+        <ul>
+            <li><a target="blank" href="https://glaze-stetson-ab0.notion.site/MK8-Deluxe-API-Documentation-9f936a9758e04bcdb4e8616ed01c445b">DOCS</a></li>
+            <li><a href="/cgu">POLICIES</a></li>
+        </ul>
+        <div class="end">
+            <p id="subscribeNavbar">SIGN UP</p>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="thanks">
+            <h2>Thank you for your subscription !</h2>
+            <p>You can look at the <a href="https://glaze-stetson-ab0.notion.site/MK8-Deluxe-API-Documentation-9f936a9758e04bcdb4e8616ed01c445b" target="blank">documentation</a> to know more about this API !</p>
+            
+            <p>You can get your api here :</p>
+        </div>
+        <div id="loading" style="display: none;">
+            <p>LOADING...</p>
+        </div>
+        
+        <div id="no-key">
+            <a class="btn" id="getMyKeyBtn">Get my key</a>
+        </div>
+        
+        <div id="key-reveal" style="display: none;">
+            <h3>Your secret API KEY is :</h3>
+            <code id="keyEmplacement"></code>
+            <a id="copyBtn" class="btn">Copy</a>
+            <p>Keep this key in a safe place. Once this page is closed, we will no longer be able to provide you with your key.</p>
+            <p>Do not share this key with anyone.</p>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; Mickaël Urien - <a href="https://mickaelurien.fr" target="blank">mickaelurien.fr</a></p>
+        </div>
+        <div>
+            <a target="blank" href="https://glaze-stetson-ab0.notion.site/MK8-Deluxe-API-Documentation-9f936a9758e04bcdb4e8616ed01c445b">DOCS</a>
+            <a href="/cgu">POLICIES</a>
+        </div>
+    </footer>
+    <script>
+        const trigger = document.getElementById('getMyKeyBtn');
+        const show = document.getElementById('keyEmplacement');
+        const loading = document.getElementById('loading');
+
+        const noKey = document.getElementById('no-key')
+        const keyReveal = document.getElementById('key-reveal')
+        trigger.addEventListener('click', async (e) => {
+            noKey.style.display = 'none';
+            loading.style.display = 'block';
+            let rawResponse  = await fetch(`/getmykey${window.location.search}`);
+            let key = await rawResponse.json();
+            show.innerHTML = key;
+            loading.style.display = 'none';
+            keyReveal.style.display = 'flex'
+        })
+    </script>
+</body>
+</html>

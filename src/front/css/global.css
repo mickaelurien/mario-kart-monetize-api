@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap");
+* {
+  --text-color: #16161d;
+  --background-color: #E4E9ED;
+  --button-background-color: red;
+  --button-text-color: white;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, .btn {
+  font-family: "Bebas Neue", cursive;
+}
+
+h1 {
+  font-size: 76px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 58px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 470px) {
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+}
+p, li, a {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  border-radius: 8px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+#index .banner {
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: 0% 50%;
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#index .banner h1, #index .banner h3 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+}
+#index .banner h1 {
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+#index .banner h3 {
+  margin-top: 0;
+}
+#index .content h2 {
+  text-align: center;
+  letter-spacing: 1px;
+}
+#index .content .items-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+@media screen and (max-width: 960px) {
+  #index .content .items-container {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  #index .content .items-container .item h3 {
+    margin-top: 12px;
+  }
+  #index .content .items-container .item p {
+    margin-bottom: 50px;
+  }
+}
+#index .content .items-container .item {
+  flex: 1;
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#index .content .items-container .item img {
+  width: 60px;
+  margin: auto;
+}
+#index .content .items-container .item h3, #index .content .items-container .item p {
+  text-align: center;
+  line-height: 1.5;
+}
+#index .content .items-container .item h3 {
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+#index .content .items-container .item p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background-color: var(--background-color);
+  font-weight: bold;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar ul li {
+  padding: 0 12px;
+}
+.navbar ul li a, .navbar .end p {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+}
+.navbar ul li a:hover, .navbar .end p:hover {
+  text-decoration: underline;
+}
+.navbar .end p {
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer a {
+  color: var(--text-color);
+}
+footer div {
+  margin: 0 12px;
+}
+footer div a:first-child {
+  margin-right: 6px;
+}
+footer div:nth-child(2) {
+  text-align: right;
+}
+footer div:nth-child(2) a {
+  text-decoration: none;
+}
+
+#success main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
+}
+@media screen and (max-width: 560px) {
+  #success main {
+    width: 80%;
+    font-size: 18px;
+  }
+}
+#success main #key-reveal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#success main #key-reveal #keyEmplacement {
+  font-size: 30px;
+}
+@media screen and (max-width: 740px) {
+  #success main #key-reveal #keyEmplacement {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #success main #key-reveal #keyEmplacement {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 440px) {
+  #success main #key-reveal #keyEmplacement {
+    font-size: 14px;
+  }
+}
+#success main #key-reveal #copyBtn {
+  max-width: 100px;
+  margin: 30px auto auto;
+}
+
+/*# sourceMappingURL=global.css.map */
